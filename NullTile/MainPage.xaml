@@ -1,0 +1,55 @@
+﻿<Page
+    x:Class="NullTile.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:NullTile"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Loaded="Page_Loaded">
+
+    <StackPanel Margin="5,5,5,5">
+        <TextBlock HorizontalAlignment="Center" Text="Null Tile" FontSize="18" />
+        <TextBlock HorizontalAlignment="Center" Text="" FontSize="10" Name="uiVers"/>
+
+        <TextBlock x:Name="uiCreatedNum" Margin="0,20,0,20" Text="Created count: 0"/>
+        <Grid Name="uiSetNum" Visibility="Collapsed" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="Numer" VerticalAlignment="Center"/>
+            <TextBox Grid.Column="1" Name="uiNewNum" InputScope="Digits" Margin="10,0,10,0" VerticalAlignment="Center"/>
+            <Button Grid.Column="2" Click="uiSetNum_Click" Content="OK" VerticalAlignment="Center" />
+        </Grid>
+        <TextBox x:Uid="uiTileText" x:Name="uiTileText" Header="Tile text" />
+        <ComboBox Grid.Column="0" Name="uiTileSize" x:Uid="uiTileSize" Header="Text size" Margin="0,10,0,10">
+            <ComboBoxItem Content="caption" />
+            <ComboBoxItem Content="base" />
+            <ComboBoxItem Content="subtitle" IsSelected="True" />
+            <ComboBoxItem Content="title" />
+            <ComboBoxItem Content="subheader" />
+            <ComboBoxItem Content="header" />
+<!--
+            ' caption   12 regular
+        ' body      15 regular
+        ' base      15 semibold
+        ' subtitle  20 regular
+        ' title     24 semilight
+        ' subheader 34 light
+        ' header    46 light
+-->
+        </ComboBox>
+        <TextBox x:Name="uiTileUrl" x:Uid="uiTileUrl" Header="Uri (optional)"/>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <TextBox Name="uiPictPath" x:Uid="uiPictPath" Header="Picture (optional)" IsReadOnly="True" />
+            <Button Name="uiPictBrowse" x:Uid="uiPictBrowse" Content="Browse..." Grid.Column="1" VerticalAlignment="Bottom" />
+        </Grid>
+        <Button HorizontalAlignment="Center" x:Uid="uiCreate" Click="uiCreate_Click" Content="Create!" Margin="0,20,0,0"/>
+    </StackPanel>
+</Page>
