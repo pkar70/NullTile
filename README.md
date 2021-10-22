@@ -5,7 +5,7 @@
  Język polski: https://www.microsoft.com/pl-pl/p/n/9N524SWN6RKP
 
 # Privacy policy
-http://beskid.geo.uj.edu.pl/p/ms/nulltile-privacy.htm 
+https://github.com/pkar70/NullTile/wiki/Privacy-policy
 
 
 
